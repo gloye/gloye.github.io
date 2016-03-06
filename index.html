@@ -52,6 +52,56 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2016-03-06T13:21:04.000Z"><a href="/2016/03/06/经典实例-数组去重/">2016-03-06</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2016/03/06/经典实例-数组去重/">经典实例--数组去重</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>数组去重算是js学习中一个经典的实例了，这里从归纳总结了关于数组去重的几个实例方法。  </p>
+<ol>
+<li><p>常规双重循环方法，类似高中数学中的排列组合方法,循环数组中的每一项，那它们与后面的项进行比较，也是最初想到的方法。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//step 1 构建一个新数组</span></span><br><span class="line"><span class="comment">//step 2 for循环每次从原数组中取出一个元素，用这个元素与后面的元素循环对比</span></span><br><span class="line"><span class="comment">//step 3 如果结果数组中没有该元素,则保存到结果数组中去</span></span><br><span class="line"> <span class="keyword">var</span> a = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">5</span>, <span class="number">3</span>];</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">uniqArray</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> i, j, newArr = [];</span><br><span class="line">        <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">            <span class="keyword">var</span> repeat = <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">for</span> (j = i + <span class="number">1</span>; j &lt; arr.length; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (arr[i] == arr[j]) &#123;</span><br><span class="line">                    repeat = <span class="literal">true</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(!repeat)&#123;</span><br><span class="line">                newArr.push(arr[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> newArr;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> b = uniqArray(a);</span><br><span class="line">    <span class="built_in">console</span>.log(b); <span class="comment">// [1, 3, 5, 7]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>双重循环升级版，利用JavaScript数组的特性来判断，arr.indexOf()方法，如果数组中找不到该元素，会返回-1。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//step 1 构建一个新数组</span></span><br><span class="line"><span class="comment">//step 2 for循环原数组中每一个元素</span></span><br><span class="line"><span class="comment">//step 3 如果结果数组中没有该元素,则保存到结果数组中去</span></span><br><span class="line"> 	<span class="keyword">var</span> a = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">5</span>, <span class="number">3</span>];</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">uniqArray</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> n = []</span><br><span class="line">        arr.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">v</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (n.indexOf(v) == -<span class="number">1</span>)</span><br><span class="line">                n.push(v)</span><br><span class="line">        &#125;)</span><br><span class="line">        <span class="keyword">return</span> n;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> b = uniqArray(a);</span><br><span class="line">    <span class="built_in">console</span>.log(b); <span class="comment">// [1, 3, 5, 7]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>属性去重方法,个人觉得比较Geek的方法，原理就是把循环出来的值当做一个新对象的属性，通过比较新对象的属性来判断是否重复。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//step 1 构建一个新数组</span></span><br><span class="line"><span class="comment">//step 2 for循环原数组中每一个元素</span></span><br><span class="line"><span class="comment">//step 3 判断值是否为js对象的键，不是的话给对象新增该键并放入新数组</span></span><br><span class="line"> 	<span class="keyword">var</span> a = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">5</span>, <span class="number">3</span>];</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">uniqArray</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> n = &#123;&#125;, r = [];</span><br><span class="line">        arr.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">i</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (!n[i]) &#123;</span><br><span class="line">                n[i] = <span class="literal">true</span>;</span><br><span class="line">                r.push(i)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="keyword">return</span> r;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> b = uniqArray(a);</span><br><span class="line">    <span class="built_in">console</span>.log(b); <span class="comment">// [1, 3, 5, 7]</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>这个方法有个不足就是无法判断类似arr[1]与arr[“1”]字符串是数字这种问题,所以如果是字符数值混合数组需要加原型判断<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">5</span>, <span class="number">3</span>];</span><br><span class="line">     <span class="function"><span class="keyword">function</span> <span class="title">delrep3</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">     	<span class="keyword">var</span> n = &#123;&#125;, r = []</span><br><span class="line">       <span class="keyword">this</span>.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">v</span>) </span>&#123;</span><br><span class="line">           <span class="keyword">if</span> (!n[<span class="keyword">typeof</span>(v) + v]) &#123;</span><br><span class="line">               n[<span class="keyword">typeof</span>(v) + v] = <span class="literal">true</span></span><br><span class="line">               r.push(v)</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;)</span><br><span class="line">       <span class="keyword">return</span> r;</span><br><span class="line">   	&#125;</span><br><span class="line">   <span class="keyword">var</span> b = uniqArray(a);</span><br><span class="line">   <span class="built_in">console</span>.log(b); <span class="comment">// [1, 3, 5, 7]</span></span><br></pre></td></tr></table></figure></p>
+<p>参考资料：  </p>
+<ul>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp" target="_blank" rel="external">【WEB前端】JavaScript数组去重</a>  </li>
+<li><a href="http://www.cnblogs.com/wteam-xq/p/4732351.html" target="_blank" rel="external">JS数组去重算法实现</a></li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2016-01-29T16:27:10.000Z"><a href="/2016/01/30/管中窥豹-基础前端项目的工程化/">2016-01-30</a></time>
       
       
@@ -62,13 +112,13 @@
     </header>
     <div class="entry">
       
-        <p>整理一下大半年来使用过的前端工具，附简评。</p>
-<h2 id="1-_u81EA_u52A8_u5316_u5DE5_u5177_grunt__26amp_3B_gulp"><a href="#1-_u81EA_u52A8_u5316_u5DE5_u5177_grunt__26amp_3B_gulp" class="headerlink" title="1.自动化工具 grunt &amp; gulp"></a>1.自动化工具 grunt &amp; gulp</h2><p>两种工具都有所尝试，其实针对当前无论哪一种都够用了，开始用grunt，后来忍不住尝鲜了gulp，现在因为gulp封装的更为清晰，链式结构更加明了，<br>现在已经转到gulp上面了，以上是我对这两款工具的直观感受，如果你从没接触过任何一款，建议从gulp开始吧。</p>
-<h2 id="2-html_u6A21_u677F_jade"><a href="#2-html_u6A21_u677F_jade" class="headerlink" title="2.html模板 jade"></a>2.html模板 jade</h2><p>话说jade现在已经改名了，这个还在初学阶段，之前因为后端使用sthml并没有前端模板上的需求而搁置了下来，其实模板的最大优势不是它能多高地<br>去提升效率，而是可以灵活地进行模块化的处理。</p>
+        <p> 整理一下大半年来使用过的前端工具，附简评。</p>
+<h2 id="1-_u81EA_u52A8_u5316_u5DE5_u5177_grunt__26amp_3B_gulp"><a href="#1-_u81EA_u52A8_u5316_u5DE5_u5177_grunt__26amp_3B_gulp" class="headerlink" title="1.自动化工具 grunt &amp; gulp"></a>1.自动化工具 grunt &amp; gulp</h2><p>两种工具都有所尝试，其实针对当前无论哪一种都够用了，开始用grunt，后来忍不住尝鲜了gulp，现在因为gulp封装的更为清晰，链式结构更加明了，现在已经转到gulp上面了，以上是我对这两款工具的直观感受，如果你从没接触过任何一款，建议从gulp开始吧。</p>
+<h2 id="2-html_u6A21_u677F_jade"><a href="#2-html_u6A21_u677F_jade" class="headerlink" title="2.html模板 jade"></a>2.html模板 jade</h2><p>话说jade现在已经改名了，这个还在初学阶段，之前因为后端使用sthml并没有前端模板上的需求而搁置了下来，其实模板的最大优势不是它能多高地去提升效率，而是可以灵活地进行模块化的处理。</p>
 <h2 id="3-css_u9884_u5904_u7406_u5668_sass"><a href="#3-css_u9884_u5904_u7406_u5668_sass" class="headerlink" title="3.css预处理器 sass"></a>3.css预处理器 sass</h2><p>scss的发展使得sass预处理器编码更加贴近原生css，简而言之，可以混合使用，如果你乐意，完全可以编写一份纯原生css的scss文件进行编译，推荐。</p>
-<h3 id="3-5_postCss"><a href="#3-5_postCss" class="headerlink" title="3.5 postCss"></a>3.5 postCss</h3><p>这个东西，怎么说呢，它什么都不是，它又什么都是，它更像是一个生态系统，感觉就是以前买衣服到服装店，买日用到百货店，买电脑到电脑店<br>，现在出来一个淘宝，你们买什么都他么往这来，这里有你想要的一切，当然，仅限css相关。</p>
-<h2 id="4-JavaScript_u6846_u67B6_jQuery"><a href="#4-JavaScript_u6846_u67B6_jQuery" class="headerlink" title="4.JavaScript框架 jQuery"></a>4.JavaScript框架 jQuery</h2><p>很惭愧，只做过一些微小的项目，只用过jQuery，某段时间接触过vue,但是感觉对当前工作并没有什么实用性（切图狗的自我修养），就弃了，GF两大<br>家的开源项目都只是存在知道有这个东西，哦，还有个zepto,还是提一下吧，某些场景可以在移动端代替jQuery。</p>
-<h2 id="5-__u524D_u7AEF_u6846_u67B6_bootstrap_uFF0CfrozenUI"><a href="#5-__u524D_u7AEF_u6846_u67B6_bootstrap_uFF0CfrozenUI" class="headerlink" title="5. 前端框架 bootstrap，frozenUI"></a>5. 前端框架 bootstrap，frozenUI</h2><p>一个是针对响应式开发的web框架，一个是轻量级的移动web框架，前者出自twitter,后者出自鹅厂，两者并不是一个量级的东西，如果你想了解一下结构<br>以及样式在项目构建中如何编码的，不妨拿bs练手几个项目，可惜的是，翻出了墙，却倒在验证手机号上。</p>
+<h3 id="3-5_postCss"><a href="#3-5_postCss" class="headerlink" title="3.5 postCss"></a>3.5 postCss</h3><p>这个东西，怎么说呢，它什么都不是，它又什么都是，它更像是一个生态系统，感觉就是以前买衣服到服装店，买日用到百货店，买电脑到电脑店，现在出来一个淘宝，你们买什么都他么往这来，这里有你想要的一切，当然，仅限css相关。</p>
+<h2 id="4-JavaScript_u6846_u67B6_jQuery"><a href="#4-JavaScript_u6846_u67B6_jQuery" class="headerlink" title="4.JavaScript框架 jQuery"></a>4.JavaScript框架 jQuery</h2><p>很惭愧，只做过一些微小的项目，只用过jQuery，某段时间接触过vue,但是感觉对当前工作并没有什么实用性（切图狗的自我修养），就弃了，GF两大家的开源项目都只是存在知道有这个东西，哦，还有个zepto,还是提一下吧，某些场景可以在移动端代替jQuery。</p>
+<h2 id="5-__u524D_u7AEF_u6846_u67B6_bootstrap_uFF0CfrozenUI"><a href="#5-__u524D_u7AEF_u6846_u67B6_bootstrap_uFF0CfrozenUI" class="headerlink" title="5. 前端框架 bootstrap，frozenUI"></a>5. 前端框架 bootstrap，frozenUI</h2><p>一个是针对响应式开发的web框架，一个是轻量级的移动web框架，前者出自twitter,后者出自鹅厂，两者并不是一个量级的东西，如果你想了解一下结构以及样式在项目构建中如何编码的，不妨拿bs练手几个项目，可惜的是，翻出了墙，却倒在验证手机号上。</p>
 <h2 id="u603B_u4E86_u4E2A_u7ED3"><a href="#u603B_u4E86_u4E2A_u7ED3" class="headerlink" title="总了个结"></a>总了个结</h2><ol>
 <li>开发小项目（企业站?)等推荐使用gulp自动化工具以及sass处理器进行构建开发（必备之良药？）。</li>
 <li>bootstrap无论大家用到用不到都建议去了解一下，过一遍源码，食用的话配合sass更美味。  </li>
