@@ -52,6 +52,39 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2016-03-12T12:14:59.000Z"><a href="/2016/03/12/《JavaScript高级程序设计》跨浏览器事件处理程序/">2016-03-12</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2016/03/12/《JavaScript高级程序设计》跨浏览器事件处理程序/">《JavaScript高级程序设计》跨浏览器事件</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>节选自 《JavaScript高级程序设计》<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">//跨浏览器事件处理程序</span></span><br><span class="line"><span class="keyword">var</span> EventUtil = &#123;</span><br><span class="line">	addEvent: <span class="function"><span class="keyword">function</span> (<span class="params">element, event, handler</span>) </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (element.addEventListener) &#123;</span><br><span class="line">			element.addEventListener(event, handler, <span class="literal">false</span>)</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span> (element.attachEvent) &#123;</span><br><span class="line">			element.attachEvent(<span class="string">"on"</span> + event, handler)</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			element[<span class="string">"on"</span> + event] = handler;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	removeEvent: <span class="function"><span class="keyword">function</span> (<span class="params">element, event, handler</span>) </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (element.removeEventListener) &#123;</span><br><span class="line">			element.removeEventListener(event, handler, <span class="literal">false</span>)</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span> (element.detachEvent) &#123;</span><br><span class="line">			element.detachEvent(<span class="string">"on"</span> + event, handler)</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			element[<span class="string">"on"</span> + event] = <span class="literal">null</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	getEvent: <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> event?event:<span class="built_in">window</span>.event;</span><br><span class="line">	&#125;,</span><br><span class="line">	getTarget:<span class="function"><span class="keyword">function</span>(<span class="params">target</span>)</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> event.target || event.srcElement;</span><br><span class="line">	&#125; ,</span><br><span class="line">	preventDefault:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(event.preventDefault)&#123;</span><br><span class="line">			event.preventDefault();</span><br><span class="line">		&#125; <span class="keyword">else</span>&#123;</span><br><span class="line">			event.returnValue = <span class="literal">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	stopPropagation:<span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(event.stopPropagation)&#123;</span><br><span class="line">			event.stopPropagation();</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			event.cancelBubble = <span class="literal">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2016-03-06T13:21:04.000Z"><a href="/2016/03/06/经典实例-数组去重/">2016-03-06</a></time>
       
       
