@@ -52,6 +52,58 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2016-03-23T14:43:25.000Z"><a href="/2016/03/23/PHP面向对象编程/">2016-03-23</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2016/03/23/PHP面向对象编程/">PHP面向对象编程</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h2 id="PHP_u9762_u5411_u5BF9_u8C61_u7F16_u7A0B_u57FA_u7840_u77E5_u8BC6"><a href="#PHP_u9762_u5411_u5BF9_u8C61_u7F16_u7A0B_u57FA_u7840_u77E5_u8BC6" class="headerlink" title="PHP面向对象编程基础知识"></a>PHP面向对象编程基础知识</h2><h3 id="u57FA_u672C_u77E5_u8BC6_u70B9"><a href="#u57FA_u672C_u77E5_u8BC6_u70B9" class="headerlink" title="基本知识点"></a>基本知识点</h3><ol>
+<li>类的定义与实例化</li>
+<li>构造函数与析构函数</li>
+<li>对象继承</li>
+<li>访问控制</li>
+<li>Static静态关键字</li>
+<li>Final关键字</li>
+<li>数据访问  </li>
+<li>对象接口</li>
+<li>多态</li>
+<li>抽象类</li>
+<li>魔术方法，方法重载</li>
+</ol>
+<h3 id="u7C7B_u7684_u5B9A_u4E49_u4E0E_u5B9E_u4F8B_u5316"><a href="#u7C7B_u7684_u5B9A_u4E49_u4E0E_u5B9E_u4F8B_u5316" class="headerlink" title="类的定义与实例化"></a>类的定义与实例化</h3><ul>
+<li>每个类的定义都以关键字 class 开头，后面跟着类名，后面跟着一对花括号，里面包含有类的属性与方法的定义。</li>
+<li>类名可以是任何非 PHP 保留字的合法标签。一个合法类名以字母或下划线开头，后面跟着若干字母，数字或下划线。</li>
+<li>一个类可以包含有属于自己的常量，变量（称为“属性”）以及函数（称为“方法”）。 </li>
+<li>当一个方法在类定义内部被调用时，有一个可用的伪变量$this。</li>
+<li>创建一个类的实例，必须使用<em><strong>new</strong></em>关键字<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">player</span> </span>&#123;</span><br><span class="line">	<span class="variable">$name</span> ;</span><br><span class="line">	<span class="variable">$game</span> ;</span><br><span class="line">	<span class="variable">$number</span> ;</span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">getRank</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">echo</span> <span class="string">"my score is："</span>.<span class="variable">$this</span> - &gt; number.<span class="string">"\n"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable">$kobe</span> = <span class="keyword">new</span> player();</span><br><span class="line"><span class="variable">$kobe</span> -&gt; score = <span class="string">"82"</span>;</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2016-03-12T12:14:59.000Z"><a href="/2016/03/12/《JavaScript高级程序设计》跨浏览器事件处理程序/">2016-03-12</a></time>
       
       
