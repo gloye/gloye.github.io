@@ -1,0 +1,196 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Jade总结 | Gloye 的博客</title>
+  <meta name="author" content="Gloye Sun">
+  
+  <meta name="description" content="尽量做一个专业点的技术博客，偶尔会有日记随笔什么奇奇怪怪的文字出现">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Jade总结"/>
+  <meta property="og:site_name" content="Gloye 的博客"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Gloye 的博客" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">Gloye 的博客</a></h1>
+  <h2><a href="/">天生我材必有用</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div>
+</header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2016-06-05T10:20:34.000Z"><a href="/2016/06/05/Jade小结/">2016-06-05</a></time>
+      
+      
+  
+    <h1 class="title">Jade总结</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>Jade是基于NODE的比较流行的一种html模板引擎，也可以当做html预编译器。<br>Jade官方有很详细的说明文档，浅显易懂，直接<a href="http://www.jade-lang.com" target="_blank" rel="external">点击访问</a><br>Jade的核心是<strong>缩进</strong>，利用<strong>缩进</strong>来表示内容的层次嵌套关系。<br>我在过去的几周内，用jade实践了几个小项目，这里总结出一些jade中常用的东西。</p>
+<h2 id="1-__u5982_u4F55_u5BF9jade_u5B9E_u884C_u6A21_u677F_u7684_u590D_u7528_uFF0C_u4F8B_u5982header_u4E0Efooter"><a href="#1-__u5982_u4F55_u5BF9jade_u5B9E_u884C_u6A21_u677F_u7684_u590D_u7528_uFF0C_u4F8B_u5982header_u4E0Efooter" class="headerlink" title="1. 如何对jade实行模板的复用，例如header与footer"></a>1. 如何对jade实行模板的复用，例如header与footer</h2><p><strong>关键词：extends block</strong><br>例如：layout.jade 这是你引用的模板文件<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">    doctype</span><br><span class="line">    html</span><br><span class="line">    head</span><br><span class="line">        title</span><br><span class="line">    body</span><br><span class="line">        header</span><br><span class="line">            <span class="comment">&lt;!--publick header --&gt;</span></span><br><span class="line">        .content</span><br><span class="line">            block content</span><br><span class="line">                your content</span><br><span class="line">        footer</span><br><span class="line">           <span class="comment">&lt;!-- publick footer --&gt;</span>       </span><br><span class="line">            </span><br><span class="line">```   </span><br><span class="line">index.jade 这是你要写的首页</span><br></pre></td></tr></table></figure></p>
+<p>extend layout.jade<br>block content<br>    your content<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">index.jade会继承你在layout下面的公共部分，你可以在block content 下面写下你当前页面的内容。</span><br><span class="line"></span><br><span class="line"><span class="preprocessor">## <span class="number">2.</span> 循环</span></span><br><span class="line">Jade里面常用的循环方式有三种，一种是<span class="keyword">for</span>循环，一种是循环数组，还有一种是循环对象。</span><br><span class="line"><span class="preprocessor">###（<span class="number">1</span>）for循环</span></span><br></pre></td></tr></table></figure></p>
+<p>div<br> -for(var i=0;i<4;i++) div.item="" <figure="" class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">这样生成出来的会是</span><br><span class="line">```html</span><br><span class="line">&lt;<span class="keyword">div</span>&gt;</span><br><span class="line">    &lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"item"</span>&gt;&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">    &lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"item"</span>&gt;&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">    &lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"item"</span>&gt;&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">    &lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"item"</span>&gt;&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">&lt;/<span class="keyword">div</span>&gt;</span><br></pre></td></tr></table></4;i++)></p>
+<p> 这种多用来表现重复单一的html元素<br> tips: for前面不要忘了<strong>’-‘</strong>来表示这是一个javascript语句 </p>
+<h3 id="uFF082_uFF09_u6570_u7EC4_u5FAA_u73AF"><a href="#uFF082_uFF09_u6570_u7EC4_u5FAA_u73AF" class="headerlink" title="（2）数组循环"></a>（2）数组循环</h3><p> 这里jade为我们提供了一个each方法，具体实践<br> <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ul.nav&#10;   each item in[&#39;&#39318;&#39029;&#39;,&#39;&#20851;&#20110;&#25105;&#20204;&#39;,&#39;&#32852;&#31995;&#25105;&#20204;&#39;,&#39;&#21152;&#20837;&#25105;&#20204;&#39;]&#10;       li= item</span><br></pre></td></tr></table></figure></p>
+<p>这样生成出来的会是<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="title">ul</span> <span class="attribute">class</span>=<span class="value">"nav"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">li</span>&gt;</span>首页<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">li</span>&gt;</span>关于我们<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">li</span>&gt;</span>联系我们<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">li</span>&gt;</span>加入我们<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">ul</span>&gt;</span></span><br><span class="line">```   </span><br><span class="line">这里可以将我们的内容加入到数组中，嵌入不同的文本。</span><br><span class="line"></span><br><span class="line">### (3)对象循环</span><br><span class="line">实际上就是在内容上再次添加了一个属性，例如url</span><br><span class="line">```jade</span><br><span class="line">ul</span><br><span class="line">    each item , url in&#123;"/":"首页","/about":"关于我们","/contact":"联系我们","/join":"联系我们"&#125;</span><br><span class="line">    li</span><br><span class="line">        a(href = url)= item</span><br><span class="line">```  </span><br><span class="line">这样我们会生成带有url的导航</span><br><span class="line"> ```html</span><br><span class="line">    <span class="tag">&lt;<span class="title">ul</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"/"</span>&gt;</span>首页<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"/about"</span>&gt;</span>关于我们<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"/contact"</span>&gt;</span>联系我们<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"/join"</span>&gt;</span>联系我们<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">ul</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>由于在jade中机制关系，大部分时候每一行代码表示一层，如果我们为了增加代码可读性，将上面的改成<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ul&#10;    each item , url in&#123;&#10;        &#34;/&#34;:&#34;&#39318;&#39029;&#34;,&#10;        &#34;/about&#34;:&#34;&#20851;&#20110;&#25105;&#20204;&#34;,&#10;        &#34;/contact&#34;:&#34;&#32852;&#31995;&#25105;&#20204;&#34;,&#10;        &#34;/join&#34;:&#34;&#32852;&#31995;&#25105;&#20204;&#34;&#10;        &#125;&#10;    li&#10;        a(href = url)= item</span><br></pre></td></tr></table></figure></p>
+<p>上面的情况在渲染过程中会报错，这时候我们可以借助变量方式来实现，通过-符号创建一个javascript区域<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ul&#10;    -&#10;     var urls = &#123;&#10;                 &#34;/&#34;:&#34;&#39318;&#39029;&#34;,&#10;                 &#34;/about&#34;:&#34;&#20851;&#20110;&#25105;&#20204;&#34;,&#10;                 &#34;/contact&#34;:&#34;&#32852;&#31995;&#25105;&#20204;&#34;,&#10;                 &#34;/join&#34;:&#34;&#32852;&#31995;&#25105;&#20204;&#34;           &#10;                &#125;  &#10;    each item , url in urls&#10;        li&#10;          a(href=url)= item</span><br></pre></td></tr></table></figure></p>
+<p>这样就没关系了</p>
+<h2 id="3-__u5305_u542Binclude"><a href="#3-__u5305_u542Binclude" class="headerlink" title="3. 包含include"></a>3. 包含include</h2><p>include这里多用于复用模块，适用于比较小的但是并不是每个页面都需要的模块，比如:分页<br><strong>page.jade</strong><br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ul&#10;    li:a &#19978;&#19968;&#39029;&#10;    li:a 1&#10;    li:a 2&#10;    li:a &#19979;&#19968;&#39029;&#10;```        &#10;```jade&#10;ul&#10;        li &#26032;&#38395;&#21015;&#34920;&#10;        li &#26032;&#38395;&#21015;&#34920;&#10;        li &#26032;&#38395;&#21015;&#34920;&#10;        li &#26032;&#38395;&#21015;&#34920;&#10;        li &#26032;&#38395;&#21015;&#34920;&#10;include page.jade</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+        
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
+
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">留言</h1>
+
+  
+      <div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=123456789012345";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<div class="fb-comments" data-href="http://yoursite.com/2016/06/05/Jade小结/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
+      
+  
+</section>
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜尋">
+    <input type="hidden" name="q" value="site:yoursite.com">
+  </form>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">分類</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/tools/">tools</a><small>1</small></li>
+  
+    <li><a href="/categories/杂记/">杂记</a><small>2</small></li>
+  
+    <li><a href="/categories/样式/">样式</a><small>1</small></li>
+  
+    <li><a href="/categories/行为/">行为</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tag">
+  <h3 class="title">標籤</h3>
+  <ul class="entry">
+  
+    <li><a href="/tags/css3/">css3</a><small>1</small></li>
+  
+    <li><a href="/tags/jQuery事件模拟/">jQuery事件模拟</a><small>1</small></li>
+  
+    <li><a href="/tags/工程化/">工程化</a><small>1</small></li>
+  
+    <li><a href="/tags/文字-槽点/">文字 槽点</a><small>1</small></li>
+  
+    <li><a href="/tags/杂记/">杂记</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2016 Gloye Sun
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>
