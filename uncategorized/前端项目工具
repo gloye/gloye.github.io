@@ -6,7 +6,8 @@
   <title>基础前端项目用过的工具 | Gloye 的博客</title>
   <meta name="author" content="Gloye Sun">
   
-  <meta name="description" content="尽量做一个专业点的技术博客，偶尔会有日记随笔什么奇奇怪怪的文字出现">
+  <meta name="description" content="整理一下大半年来使用过的前端工具，附简评。
+1.自动化工具 grunt &amp;amp; gulp两种工具都有所尝试，其实针对当前无论哪一种都够用了，开始用grunt，后来忍不住尝鲜了gulp，现在因为gulp封装的更为清晰，链式结构更加明了，现在已经转到gulp上面了，以上是我对这两款工具的直观感受，如">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -30,7 +31,7 @@
 <body>
   <header id="header" class="inner"><div class="alignleft">
   <h1><a href="/">Gloye 的博客</a></h1>
-  <h2><a href="/">天生我材必有用</a></h2>
+  <h2><a href="/"></a></h2>
 </div>
 <nav id="main-nav" class="alignright">
   <ul>
@@ -51,7 +52,7 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2016-01-29T16:27:10.000Z"><a href="/2016/01/30/前端项目工具/">2016-01-30</a></time>
+        <time datetime="2016-01-29T16:27:10.000Z"><a href="/uncategorized/前端项目工具">2016-01-30</a></time>
       
       
   
@@ -79,17 +80,7 @@
     <footer>
       
         
-  
-  <div class="categories">
-    <a href="/categories/tools/">tools</a>
-  </div>
-
         
-  
-  <div class="tags">
-    <a href="/tags/工程化/">工程化</a>
-  </div>
-
         
   <div class="addthis addthis_toolbox addthis_default_style">
     
@@ -130,7 +121,7 @@
   }(document, 'script', 'facebook-jssdk'));
 </script>
 
-<div class="fb-comments" data-href="http://yoursite.com/2016/01/30/前端项目工具/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
+<div class="fb-comments" data-href="http://yoursite.com/uncategorized/前端项目工具" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
       
   
 </section>
@@ -145,34 +136,8 @@
 </div>
 
   
-<div class="widget tag">
-  <h3 class="title">分類</h3>
-  <ul class="entry">
-  
-    <li><a href="/categories/tools/">tools</a><small>1</small></li>
-  
-    <li><a href="/categories/杂记/">杂记</a><small>1</small></li>
-  
-    <li><a href="/categories/行为/">行为</a><small>1</small></li>
-  
-  </ul>
-</div>
-
 
   
-<div class="widget tag">
-  <h3 class="title">標籤</h3>
-  <ul class="entry">
-  
-    <li><a href="/tags/jQuery事件模拟/">jQuery事件模拟</a><small>1</small></li>
-  
-    <li><a href="/tags/工程化/">工程化</a><small>1</small></li>
-  
-    <li><a href="/tags/文字-槽点/">文字 槽点</a><small>1</small></li>
-  
-  </ul>
-</div>
-
 </aside>
     <div class="clearfix"></div>
   </div>

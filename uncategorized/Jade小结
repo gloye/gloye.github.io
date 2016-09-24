@@ -6,7 +6,8 @@
   <title>Jade/Pug使用经验分享 | Gloye 的博客</title>
   <meta name="author" content="Gloye Sun">
   
-  <meta name="description" content="尽量做一个专业点的技术博客，偶尔会有日记随笔什么奇奇怪怪的文字出现">
+  <meta name="description" content="Jade是基于NODE的比较流行的一种html模板引擎，也可以当做html预编译器。Jade官方有很详细的说明文档，浅显易懂，直接点击访问Jade的核心是缩进，利用缩进来表示内容的层次嵌套关系。我在过去的几周内，用jade实践了几个小项目，这里总结出一些jade中常用的东西。
+1. 如何对jade实">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -30,7 +31,7 @@
 <body>
   <header id="header" class="inner"><div class="alignleft">
   <h1><a href="/">Gloye 的博客</a></h1>
-  <h2><a href="/">天生我材必有用</a></h2>
+  <h2><a href="/"></a></h2>
 </div>
 <nav id="main-nav" class="alignright">
   <ul>
@@ -51,7 +52,7 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2016-06-05T10:20:34.000Z"><a href="/2016/06/05/Jade小结/">2016-06-05</a></time>
+        <time datetime="2016-06-05T10:20:34.000Z"><a href="/uncategorized/Jade小结">2016-06-05</a></time>
       
       
   
@@ -124,7 +125,7 @@
   }(document, 'script', 'facebook-jssdk'));
 </script>
 
-<div class="fb-comments" data-href="http://yoursite.com/2016/06/05/Jade小结/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
+<div class="fb-comments" data-href="http://yoursite.com/uncategorized/Jade小结" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
       
   
 </section>
@@ -139,34 +140,8 @@
 </div>
 
   
-<div class="widget tag">
-  <h3 class="title">分類</h3>
-  <ul class="entry">
-  
-    <li><a href="/categories/tools/">tools</a><small>1</small></li>
-  
-    <li><a href="/categories/杂记/">杂记</a><small>1</small></li>
-  
-    <li><a href="/categories/行为/">行为</a><small>1</small></li>
-  
-  </ul>
-</div>
-
 
   
-<div class="widget tag">
-  <h3 class="title">標籤</h3>
-  <ul class="entry">
-  
-    <li><a href="/tags/jQuery事件模拟/">jQuery事件模拟</a><small>1</small></li>
-  
-    <li><a href="/tags/工程化/">工程化</a><small>1</small></li>
-  
-    <li><a href="/tags/文字-槽点/">文字 槽点</a><small>1</small></li>
-  
-  </ul>
-</div>
-
 </aside>
     <div class="clearfix"></div>
   </div>

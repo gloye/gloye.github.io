@@ -6,7 +6,7 @@
   <title>跨浏览器事件处理程序 | Gloye 的博客</title>
   <meta name="author" content="Gloye Sun">
   
-  <meta name="description" content="尽量做一个专业点的技术博客，偶尔会有日记随笔什么奇奇怪怪的文字出现">
+  <meta name="description" content="节选自 《JavaScript高级程序设计》1234567891011121314151617181920212223242526272829303132333435363738394041 //跨浏览器事件处理程序var EventUtil = &amp;#123;	addEvent: function ">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -30,7 +30,7 @@
 <body>
   <header id="header" class="inner"><div class="alignleft">
   <h1><a href="/">Gloye 的博客</a></h1>
-  <h2><a href="/">天生我材必有用</a></h2>
+  <h2><a href="/"></a></h2>
 </div>
 <nav id="main-nav" class="alignright">
   <ul>
@@ -51,7 +51,7 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2016-03-12T12:14:59.000Z"><a href="/2016/03/12/跨浏览器事件处理程序/">2016-03-12</a></time>
+        <time datetime="2016-03-12T12:14:59.000Z"><a href="/uncategorized/跨浏览器事件处理程序">2016-03-12</a></time>
       
       
   
@@ -109,7 +109,7 @@
   }(document, 'script', 'facebook-jssdk'));
 </script>
 
-<div class="fb-comments" data-href="http://yoursite.com/2016/03/12/跨浏览器事件处理程序/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
+<div class="fb-comments" data-href="http://yoursite.com/uncategorized/跨浏览器事件处理程序" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
       
   
 </section>
@@ -124,34 +124,8 @@
 </div>
 
   
-<div class="widget tag">
-  <h3 class="title">分類</h3>
-  <ul class="entry">
-  
-    <li><a href="/categories/tools/">tools</a><small>1</small></li>
-  
-    <li><a href="/categories/杂记/">杂记</a><small>1</small></li>
-  
-    <li><a href="/categories/行为/">行为</a><small>1</small></li>
-  
-  </ul>
-</div>
-
 
   
-<div class="widget tag">
-  <h3 class="title">標籤</h3>
-  <ul class="entry">
-  
-    <li><a href="/tags/jQuery事件模拟/">jQuery事件模拟</a><small>1</small></li>
-  
-    <li><a href="/tags/工程化/">工程化</a><small>1</small></li>
-  
-    <li><a href="/tags/文字-槽点/">文字 槽点</a><small>1</small></li>
-  
-  </ul>
-</div>
-
 </aside>
     <div class="clearfix"></div>
   </div>

@@ -6,7 +6,10 @@
   <title>jquery触发点击事件 | Gloye 的博客</title>
   <meta name="author" content="Gloye Sun">
   
-  <meta name="description" content="尽量做一个专业点的技术博客，偶尔会有日记随笔什么奇奇怪怪的文字出现">
+  <meta name="description" content="在某个场景中，我需要打开一个页面，然后触发这个页面a标签的click事件,像下面这样  
+第一次尝试1&amp;lt;a href=&quot;http://gloye.github.io&quot;&amp;gt;点我&amp;lt;/a&amp;gt;
+123$(function()&amp;#123;	$(&#39;a&#39;).click();&amp;#125;)
+不幸">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -30,7 +33,7 @@
 <body>
   <header id="header" class="inner"><div class="alignleft">
   <h1><a href="/">Gloye 的博客</a></h1>
-  <h2><a href="/">天生我材必有用</a></h2>
+  <h2><a href="/"></a></h2>
 </div>
 <nav id="main-nav" class="alignright">
   <ul>
@@ -51,7 +54,7 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2016-01-09T03:13:50.000Z"><a href="/2016/01/09/jquery触发点击事件/">2016-01-09</a></time>
+        <time datetime="2016-01-09T03:13:50.000Z"><a href="/uncategorized/jquery触发点击事件">2016-01-09</a></time>
       
       
   
@@ -96,17 +99,7 @@
     <footer>
       
         
-  
-  <div class="categories">
-    <a href="/categories/行为/">行为</a>
-  </div>
-
         
-  
-  <div class="tags">
-    <a href="/tags/jQuery事件模拟/">jQuery事件模拟</a>
-  </div>
-
         
   <div class="addthis addthis_toolbox addthis_default_style">
     
@@ -147,7 +140,7 @@
   }(document, 'script', 'facebook-jssdk'));
 </script>
 
-<div class="fb-comments" data-href="http://yoursite.com/2016/01/09/jquery触发点击事件/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
+<div class="fb-comments" data-href="http://yoursite.com/uncategorized/jquery触发点击事件" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
       
   
 </section>
@@ -162,34 +155,8 @@
 </div>
 
   
-<div class="widget tag">
-  <h3 class="title">分類</h3>
-  <ul class="entry">
-  
-    <li><a href="/categories/tools/">tools</a><small>1</small></li>
-  
-    <li><a href="/categories/杂记/">杂记</a><small>1</small></li>
-  
-    <li><a href="/categories/行为/">行为</a><small>1</small></li>
-  
-  </ul>
-</div>
-
 
   
-<div class="widget tag">
-  <h3 class="title">標籤</h3>
-  <ul class="entry">
-  
-    <li><a href="/tags/jQuery事件模拟/">jQuery事件模拟</a><small>1</small></li>
-  
-    <li><a href="/tags/工程化/">工程化</a><small>1</small></li>
-  
-    <li><a href="/tags/文字-槽点/">文字 槽点</a><small>1</small></li>
-  
-  </ul>
-</div>
-
 </aside>
     <div class="clearfix"></div>
   </div>

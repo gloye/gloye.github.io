@@ -6,7 +6,21 @@
   <title>PHP面向对象编程 | Gloye 的博客</title>
   <meta name="author" content="Gloye Sun">
   
-  <meta name="description" content="尽量做一个专业点的技术博客，偶尔会有日记随笔什么奇奇怪怪的文字出现">
+  <meta name="description" content="PHP面向对象编程基础知识基本知识点
+类的定义与实例化
+构造函数与析构函数
+对象继承
+访问控制
+Static静态关键字
+Final关键字
+数据访问  
+对象接口
+多态
+抽象类
+魔术方法，方法重载
+
+类的定义与实例化
+每个类的定义都以关键字 class 开头，后面跟着类名，后面跟着一对花括号，里面包含">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -30,7 +44,7 @@
 <body>
   <header id="header" class="inner"><div class="alignleft">
   <h1><a href="/">Gloye 的博客</a></h1>
-  <h2><a href="/">天生我材必有用</a></h2>
+  <h2><a href="/"></a></h2>
 </div>
 <nav id="main-nav" class="alignright">
   <ul>
@@ -51,7 +65,7 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2016-03-23T14:43:25.000Z"><a href="/2016/03/23/PHP面向对象编程/">2016-03-23</a></time>
+        <time datetime="2016-03-23T14:43:25.000Z"><a href="/uncategorized/PHP面向对象编程">2016-03-23</a></time>
       
       
   
@@ -128,7 +142,7 @@
   }(document, 'script', 'facebook-jssdk'));
 </script>
 
-<div class="fb-comments" data-href="http://yoursite.com/2016/03/23/PHP面向对象编程/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
+<div class="fb-comments" data-href="http://yoursite.com/uncategorized/PHP面向对象编程" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
       
   
 </section>
@@ -143,34 +157,8 @@
 </div>
 
   
-<div class="widget tag">
-  <h3 class="title">分類</h3>
-  <ul class="entry">
-  
-    <li><a href="/categories/tools/">tools</a><small>1</small></li>
-  
-    <li><a href="/categories/杂记/">杂记</a><small>1</small></li>
-  
-    <li><a href="/categories/行为/">行为</a><small>1</small></li>
-  
-  </ul>
-</div>
-
 
   
-<div class="widget tag">
-  <h3 class="title">標籤</h3>
-  <ul class="entry">
-  
-    <li><a href="/tags/jQuery事件模拟/">jQuery事件模拟</a><small>1</small></li>
-  
-    <li><a href="/tags/工程化/">工程化</a><small>1</small></li>
-  
-    <li><a href="/tags/文字-槽点/">文字 槽点</a><small>1</small></li>
-  
-  </ul>
-</div>
-
 </aside>
     <div class="clearfix"></div>
   </div>
