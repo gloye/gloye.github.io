@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hello World | Gloye 的博客</title>
+  <title>基础前端项目用过的工具 | Gloye 的博客</title>
   <meta name="author" content="Gloye Sun">
   
   <meta name="description" content="尽量做一个专业点的技术博客，偶尔会有日记随笔什么奇奇怪怪的文字出现">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Hello World"/>
+  <meta property="og:title" content="基础前端项目用过的工具"/>
   <meta property="og:site_name" content="Gloye 的博客"/>
 
   
@@ -51,32 +51,45 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2015-12-31T17:39:57.605Z"><a href="/2016/01/01/hello-world/">2016-01-01</a></time>
+        <time datetime="2016-01-29T16:27:10.000Z"><a href="/2016/01/30/前端项目工具/">2016-01-30</a></time>
       
       
   
-    <h1 class="title">Hello World</h1>
+    <h1 class="title">基础前端项目用过的工具</h1>
   
 
     </header>
     <div class="entry">
       
-        <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start"><a href="#Quick_Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create_a_new_post"><a href="#Create_a_new_post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server"><a href="#Run_server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files"><a href="#Generate_static_files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites"><a href="#Deploy_to_remote_sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <p> 整理一下大半年来使用过的前端工具，附简评。</p>
+<h2 id="1-_u81EA_u52A8_u5316_u5DE5_u5177_grunt__26amp_3B_gulp"><a href="#1-_u81EA_u52A8_u5316_u5DE5_u5177_grunt__26amp_3B_gulp" class="headerlink" title="1.自动化工具 grunt &amp; gulp"></a>1.自动化工具 grunt &amp; gulp</h2><p>两种工具都有所尝试，其实针对当前无论哪一种都够用了，开始用grunt，后来忍不住尝鲜了gulp，现在因为gulp封装的更为清晰，链式结构更加明了，现在已经转到gulp上面了，以上是我对这两款工具的直观感受，如果你从没接触过任何一款，建议从gulp开始吧。</p>
+<h2 id="2-html_u6A21_u677F_jade"><a href="#2-html_u6A21_u677F_jade" class="headerlink" title="2.html模板 jade"></a>2.html模板 jade</h2><p>话说jade现在已经改名了，这个还在初学阶段，之前因为后端使用sthml并没有前端模板上的需求而搁置了下来，其实模板的最大优势不是它能多高地去提升效率，而是可以灵活地进行模块化的处理。</p>
+<h2 id="3-css_u9884_u5904_u7406_u5668_sass"><a href="#3-css_u9884_u5904_u7406_u5668_sass" class="headerlink" title="3.css预处理器 sass"></a>3.css预处理器 sass</h2><p>scss的发展使得sass预处理器编码更加贴近原生css，简而言之，可以混合使用，如果你乐意，完全可以编写一份纯原生css的scss文件进行编译，推荐。</p>
+<h3 id="3-5_postCss"><a href="#3-5_postCss" class="headerlink" title="3.5 postCss"></a>3.5 postCss</h3><p>这个东西，怎么说呢，它什么都不是，它又什么都是，它更像是一个生态系统，感觉就是以前买衣服到服装店，买日用到百货店，买电脑到电脑店，现在出来一个淘宝，你们买什么都他么往这来，这里有你想要的一切，当然，仅限css相关。</p>
+<h2 id="4-JavaScript_u6846_u67B6_jQuery"><a href="#4-JavaScript_u6846_u67B6_jQuery" class="headerlink" title="4.JavaScript框架 jQuery"></a>4.JavaScript框架 jQuery</h2><p>很惭愧，只做过一些微小的项目，只用过jQuery，某段时间接触过vue,但是感觉对当前工作并没有什么实用性（切图狗的自我修养），就弃了，GF两大家的开源项目都只是存在知道有这个东西，哦，还有个zepto,还是提一下吧，某些场景可以在移动端代替jQuery。</p>
+<h2 id="5-__u524D_u7AEF_u6846_u67B6_bootstrap_uFF0CfrozenUI"><a href="#5-__u524D_u7AEF_u6846_u67B6_bootstrap_uFF0CfrozenUI" class="headerlink" title="5. 前端框架 bootstrap，frozenUI"></a>5. 前端框架 bootstrap，frozenUI</h2><p>一个是针对响应式开发的web框架，一个是轻量级的移动web框架，前者出自twitter,后者出自鹅厂，两者并不是一个量级的东西，如果你想了解一下结构以及样式在项目构建中如何编码的，不妨拿bs练手几个项目，可惜的是，翻出了墙，却倒在验证手机号上。</p>
+<h2 id="u603B_u7ED3"><a href="#u603B_u7ED3" class="headerlink" title="总结"></a>总结</h2><ol>
+<li>开发小项目（企业站?)等推荐使用gulp自动化工具以及sass处理器进行构建开发（必备之良药？）。</li>
+<li>bootstrap无论大家用到用不到都建议去了解一下，过一遍源码，食用的话配合sass更美味。  </li>
+<li>jQuery不说了，jade,postcss大家视情况而定。</li>
+</ol>
 
       
     </div>
     <footer>
       
         
+  
+  <div class="categories">
+    <a href="/categories/tools/">tools</a>
+  </div>
+
         
+  
+  <div class="tags">
+    <a href="/tags/工程化/">工程化</a>
+  </div>
+
         
   <div class="addthis addthis_toolbox addthis_default_style">
     
@@ -117,7 +130,7 @@
   }(document, 'script', 'facebook-jssdk'));
 </script>
 
-<div class="fb-comments" data-href="http://yoursite.com/2016/01/01/hello-world/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
+<div class="fb-comments" data-href="http://yoursite.com/2016/01/30/前端项目工具/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
       
   
 </section>
